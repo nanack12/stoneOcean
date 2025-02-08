@@ -1,6 +1,6 @@
-From python:3.11-slim
+FROM python:3.11-slim
 
-WORKDIR /app
+WORKDIR /stoneOcean
 
 RUN pip install --upgrade pip
 
@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y curl \
     && apt-get install -y nodejs
 
 #FastAPI 서버 실행
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

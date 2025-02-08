@@ -2,7 +2,7 @@
     "name": "FastAPI Dev Container",
     "dockerComposeFile": "../docker-compose.yml",  // 상위 폴더의 docker-compose.yml 사용
     "service": "backend",                          // backend 서비스 컨테이너 사용
-    "workspaceFolder": "/app",                     // 컨테이너 내 작업 폴더
+    "workspaceFolder": "/stoneOcean",                     // 컨테이너 내 작업 폴더
     "extensions": [
       "ms-python.python",                          // Python 확장
       "dbaeumer.vscode-eslint",                // JavaScript/React 린팅
@@ -17,5 +17,5 @@
       "python.defaultInterpreterPath": "/usr/local/bin/python",
       "editor.formatOnSave": true
     },
-    "postCreateCommand": "npm install --prefix /app/frontend"  // frontend 의존성 설치
+    "postCreateCommand": "npm install --prefix /stoneOcean/frontend"  // frontend 의존성 설치
   }

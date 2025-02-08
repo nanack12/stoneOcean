@@ -6,18 +6,31 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./:/app
+      - ./:/stoneOcean       
     environment:
       - ENV=dev
-    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+      - PYTHONPATH=/stoneOcean/backend  
+    command: ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
   frontend:
-    build: ./frontend  # Dockerfile 사용하도록 설정
+    build: ./frontend
     ports:
       - "5173:5173"
     volumes:
-      - ./frontend:/app/frontend
-      - /app/node_modules  # node_modules는 볼륨 제외
+      - ./frontend:/stoneOcean/frontend  
+      - /stoneOcean/node_modules         # node_modules는 볼륨 제외
     environment:
       - NODE_ENV=development
     command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./analysis:/stoneOcean/analysis  
+    working_dir: /stoneOcean/analysis     # Jupyter의 시작 경로를 /stoneOcean/analysis로 설정
+    environment:
+      - GRANT_SUDO=yes
+      - JUPYTER_ENABLE_LAB=yes
+    command: ["start-notebook.sh", "--NotebookApp.token=''"]
