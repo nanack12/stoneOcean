@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./:/stoneOcean       
+      - ./:/stoneOcean:delegated       
     environment:
       - ENV=dev
       - PYTHONPATH=/stoneOcean/backend  
@@ -18,9 +18,10 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend:/stoneOcean/frontend  
-      - /stoneOcean/node_modules         # node_modules는 볼륨 제외
+      - /stoneOcean/frontend/node_modules  
     environment:
       - NODE_ENV=development
+      - WATCHPACK_POLLING=true
     command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
 
   jupyter:

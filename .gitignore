@@ -1,9 +1,6 @@
-# Python 관련
 __pycache__/
 *.py[cod]
 .env
-
-# Node 관련
 node_modules/
 dist/
 .DS_Store

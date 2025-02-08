@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-WORKDIR /stoneOcean
+WORKDIR /stoneOcean/backend
 
 RUN pip install --upgrade pip
 
@@ -10,9 +10,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
+#nodejs 설치 (컨테이너가 backend 기반이라 설치 필요)
 RUN apt-get update && apt-get install -y curl \
     && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs
 
-#FastAPI 서버 실행
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
