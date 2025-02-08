@@ -1,6 +1,6 @@
 # stoneOcean 프로젝트 - Docker 환경 설정 가이드
 
-이 가이드는 Docker를 사용하여 stoneOcean 프로젝트를 시작 하기 위한 가이드입니다.
+이 가이드는 Docker를 사용하여 stoneOcean 프로젝트를 시작하기 위한 가이드입니다.
 
 - **데이터 분석가용 가이드**: Jupyter Notebook 환경 설정 및 사용법
 - **웹 서버 개발자용 가이드 (백엔드 + 프론트엔드)**: FastAPI 및 React 개발 환경 설정 방법
