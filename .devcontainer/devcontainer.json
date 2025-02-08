@@ -1,0 +1,21 @@
+{
+    "name": "FastAPI Dev Container",
+    "dockerComposeFile": "../docker-compose.yml",  // 상위 폴더의 docker-compose.yml 사용
+    "service": "backend",                          // backend 서비스 컨테이너 사용
+    "workspaceFolder": "/app",                     // 컨테이너 내 작업 폴더
+    "extensions": [
+      "ms-python.python",                          // Python 확장
+      "dbaeumer.vscode-eslint",                // JavaScript/React 린팅
+      "esbenp.prettier-vscode",                // Prettier 포매팅
+      "ms-azuretools.vscode-docker",
+      "github.vscode-pull-request-github" 
+    ],
+    "features": {
+    "ghcr.io/devcontainers/features/git:1": {}  // Git 지원 추가
+    },
+    "settings": {
+      "python.defaultInterpreterPath": "/usr/local/bin/python",
+      "editor.formatOnSave": true
+    },
+    "postCreateCommand": "npm install --prefix /app/frontend"  // frontend 의존성 설치
+  }
