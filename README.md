@@ -187,6 +187,7 @@ git config --global core.autocrlf input
 👉 CRLF를 무조건 LF로 변환 (Mac/Linux에서는 LF만 사용)
 
 2. 기존 변경 파일 수정
+3. 
    모든 Line Ending을 LF로 변환:
 
 ```sh
