@@ -12,7 +12,7 @@
 프로젝트를 처음 시작할 때 GitHub에서 소스를 가져와야 합니다. 아래 명령어를 사용하여 소스를 클론하세요:
 
 ```sh
-git clone https://github.com/nanack12/prj_stoneOcean.git
+git@github.com:nanack12/stoneOcean.git
 ```
 
 `stoneOcean` 폴더로 이동합니다:
