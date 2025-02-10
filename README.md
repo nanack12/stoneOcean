@@ -158,3 +158,37 @@ docker ps
 ```sh
 docker-compose up --build
 ```
+
+### window 환경 에서 git clone 이후 변경사항 없는데도 파일 변경 사항이 뜨는 경우
+
+원인 : Windows와 Unix 기반 시스템 간의 줄바꿈 방식이 다르기 때문에 git이 같은 파일을 다르게 인식
+
+- Windows는 CRLF (\r\n) 사용
+- Unix/Linux/Mac는 LF (\n) 사용
+
+해결안
+
+1. core.autocrlf 설정
+
+- window 사용자
+
+```sh
+git config --global core.autocrlf true
+```
+
+👉 LF → CRLF 자동 변환 (파일을 로컬에 가져오면 CRLF, 커밋할 땐 LF)
+
+- Mac/Linux 사용자
+
+```sh
+git config --global core.autocrlf input
+```
+
+👉 CRLF를 무조건 LF로 변환 (Mac/Linux에서는 LF만 사용)
+
+2. 기존 변경 파일 수정
+   모든 Line Ending을 LF로 변환:
+
+```sh
+git add . --renormalize
+```
