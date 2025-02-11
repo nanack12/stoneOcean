@@ -1,11 +1,10 @@
-import { PLASMIC } from "./plasmic-init";
-import { PlasmicRootProvider, PlasmicComponent } from "@plasmicapp/loader-react";
+import Homepage from "./components/Homepage";
 
 function App() {
   return (
-    <PlasmicRootProvider loader={PLASMIC}>
-      <PlasmicComponent component="Homepage" />
-    </PlasmicRootProvider>
+    <div>
+      <Homepage />
+    </div>
   );
 }
 

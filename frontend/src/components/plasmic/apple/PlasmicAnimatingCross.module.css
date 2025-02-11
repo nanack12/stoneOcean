@@ -1,0 +1,25 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  justify-self: flex-start;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  transition-property: transform;
+  transition-duration: 500ms;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  -webkit-transition-property: transform;
+  -webkit-transition-duration: 500ms;
+}
+.svgadd {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg);
+}
