@@ -1,0 +1,18 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+  justify-self: flex-start;
+}
+.link {
+  position: relative;
+  color: var(--token-Eu7Sk5FluAGD);
+  font-size: var(--token-VfHgc4a6UaoP);
+}
+.root:hover .link {
+  text-decoration-line: underline;
+}
